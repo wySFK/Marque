@@ -3,8 +3,6 @@
 <img width="1919" height="1079" alt="Marque" src="https://github.com/user-attachments/assets/4ebb1064-c69f-46cd-b39a-52afebe5493a" />
 
 
-A full-stack automotive marketplace for verified vehicle listings. MARQUE is designed for the collector car market, combining a premium browsing experience with dealer tools, identity verification, and vehicle inquiry management.
-
 ## Overview
 
 MARQUE allows users to discover, compare, and inquire about vehicles while giving verified dealers the ability to manage inventory, handle inquiries, and track performance.
