@@ -69,7 +69,9 @@ function calcPositions() {
 
 export function Preloader() {
   const prefersReduced = useReducedMotion();
-  const [visible, setVisible] = useState<boolean | null>(null);
+  // Init as true so the preloader renders during SSR,
+  // preventing a flash of page content before the loading screen.
+  const [visible, setVisible] = useState<boolean | null>(true);
   const [phase, setPhase] = useState<Phase>("loading");
   const [progress, setProgress] = useState(0);
 
@@ -77,7 +79,6 @@ export function Preloader() {
   const gsapRef = useRef<HTMLDivElement>(null);
   const positionsRef = useRef<ReturnType<typeof calcPositions>>(null);
 
-  // Show the intro on every page load (client-only).
   useEffect(() => {
     setVisible(true);
   }, []);
