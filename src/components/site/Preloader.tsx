@@ -69,13 +69,18 @@ function calcPositions() {
 
 export function Preloader() {
   const prefersReduced = useReducedMotion();
-  const [visible] = useState<boolean>(true);
+  const [visible, setVisible] = useState<boolean | null>(null);
   const [phase, setPhase] = useState<Phase>("loading");
   const [progress, setProgress] = useState(0);
 
   const rafRef = useRef<number | null>(null);
   const gsapRef = useRef<HTMLDivElement>(null);
   const positionsRef = useRef<ReturnType<typeof calcPositions>>(null);
+
+  // Show the intro on every page load (client-only).
+  useEffect(() => {
+    setVisible(true);
+  }, []);
 
   // Preload images.
   useEffect(() => {
